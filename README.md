@@ -1,8 +1,16 @@
-# Hello World!
+Hello World!
+============
 
-`Playing with Markdown syntax`
+`Playing with "GitHub Flavored Markdown" (GFM) syntax`
 
 # Paragraphs, Headers, Blockquotes
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
 
 A First Level Header
 ====================
@@ -10,14 +18,20 @@ A First Level Header
 A Second Level Header
 ---------------------
 
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
+Paragraphs are separated by a blank line.
 
-The quick brown fox jumped over the lazy
-dog's back.
+2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
+look like:
 
-### Header 3
+  * this one
+  * that one
+  * the other one
+
+Note that --- not considering the asterisk --- the actual text
+content starts at 4-columns in.
+
+
+## Blockquotes
 
 > This is a blockquote.
 > 
@@ -25,8 +39,12 @@ dog's back.
 >
 > ## This is an H2 in a blockquote
 
+Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
+in chapters 12--14"). Three dots ... will be converted to an ellipsis.
+Unicode is supported. ☺
 
-# Phrase Emphasis
+
+## Phrase Emphasis
 
 Some of these words *are emphasized*.
 Some of these words _are emphasized also_.
@@ -34,7 +52,8 @@ Some of these words _are emphasized also_.
 Use two asterisks for **strong emphasis**.
 Or, if you prefer, __use two underscores instead__.
 
-# LISTS
+
+## Lists
 
 *   Candy.
 *   Gum.
@@ -52,7 +71,87 @@ Or, if you prefer, __use two underscores instead__.
 2.  Green
 3.  Blue
 
-# LINKS
+### Now a nested list:
+
+ 1. First, get these ingredients:
+
+      * carrots
+      * celery
+      * lentils
+
+ 2. Boil some water.
+
+ 3. Dump everything in the pot and follow
+    this algorithm:
+
+        find wooden spoon
+        uncover pot
+        stir
+        cover pot
+        balance wooden spoon precariously on pot handle
+        wait 10 minutes
+        goto first step (or shut off burner when done)
+
+    Do not bump wooden spoon or it will fall.
+
+Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).
+
+
+## Code
+
+I strongly recommend against using any `<blink>` tags.
+
+I wish SmartyPants used named entities like `&mdash;`
+instead of decimal-encoded entites like `&#8212;`.
+
+If you want your page to validate under XHTML 1.0 Strict,
+you've got to put paragraph tags in your blockquotes:
+
+    <blockquote>
+        <p>For example.</p>
+    </blockquote>
+
+Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here's a code sample:
+
+    # Let me re-iterate ...
+    for i in 1 .. 10 { do-something(i) }
+
+As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:
+
+~~~
+define foobar() {
+    print "Welcome to flavor country!";
+}
+~~~
+
+(which makes copying & pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:
+
+~~~python
+import time
+# Quick, count to ten!
+for i in range(10):
+    # (but not *too* quick)
+    time.sleep(0.5)
+    print i
+~~~
+
+
+## Math
+
+Inline math equations go in like so: $\omega = d\phi / dt$. Display
+math should get its own line and be put in in double-dollarsigns:
+
+$$I = \int \rho R^{2} dV$$
+
+And note that you can backslash-escape any punctuation characters
+which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+
+
+## Links
 
 This is an [example link](http://example.com/).
 
@@ -72,7 +171,7 @@ I start my morning with a cup of coffee and
 [ny times]: http://www.nytimes.com/
 
 
-# IMAGES
+## Images
 
 ![alt text](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png "Octocat")
 
@@ -81,16 +180,55 @@ I start my morning with a cup of coffee and
 [id]: https://assets-cdn.github.com/images/modules/logos_page/Octocat.png "Octocat"
 
 
-# CODE
+## Tables
 
-I strongly recommend against using any `<blink>` tags.
+Tables can look like this:
 
-I wish SmartyPants used named entities like `&mdash;`
-instead of decimal-encoded entites like `&#8212;`.
+size  material      color
+----  ------------  ------------
+9     leather       brown
+10    hemp canvas   natural
+11    glass         transparent
 
-If you want your page to validate under XHTML 1.0 Strict,
-you've got to put paragraph tags in your blockquotes:
+Table: Shoes, their sizes, and what they're made of
 
-    <blockquote>
-        <p>For example.</p>
-    </blockquote>
+(The above is the caption for the table.) Pandoc also supports
+multi-line tables:
+
+--------  -----------------------
+keyword   text
+--------  -----------------------
+red       Sunsets, apples, and
+          other red or reddish
+          things.
+
+green     Leaves, grass, frogs
+          and other things it's
+          not easy being.
+--------  -----------------------
+
+
+## Other elements
+
+A horizontal rule follows.
+
+***
+
+Here's a definition list:
+
+apples
+  : Good for making applesauce.
+oranges
+  : Citrus!
+tomatoes
+  : There's no "e" in tomatoe.
+
+Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)
+
+Here's a "line block":
+
+| Line one
+|   Line too
+| Line tree
+
