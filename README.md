@@ -74,11 +74,11 @@ I start my morning with a cup of coffee and
 
 # IMAGES
 
-![alt text](/path/to/img.jpg "Title")
+![alt text](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png "Octocat")
 
 ![alt text][id]
 
-[id]: /path/to/img.jpg "Title"
+[id]: https://assets-cdn.github.com/images/modules/logos_page/Octocat.png "Octocat"
 
 
 # CODE
